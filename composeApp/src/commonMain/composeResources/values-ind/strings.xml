@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Test Resource Indonesia</string>
+
+    <string name="caesar_title">Caesar Cipher</string>
+</resources>

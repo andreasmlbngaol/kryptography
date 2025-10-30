@@ -16,19 +16,21 @@ import androidx.compose.ui.unit.dp
 import com.andreasmlbngaol.kryptography.core.domain.NavKey
 import com.andreasmlbngaol.kryptography.features.home.data.algorithms
 import com.andreasmlbngaol.kryptography.features.home.presentation.components.AlgorithmCard
-import org.koin.compose.viewmodel.koinViewModel
+import com.andreasmlbngaol.kryptography.resources.Res
+import com.andreasmlbngaol.kryptography.resources.app_name
+import org.jetbrains.compose.resources.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     onNavigateToAlgorithm: (NavKey) -> Unit,
-    viewModel: HomeViewModel = koinViewModel()
+//    viewModel: HomeViewModel = koinViewModel()
 ) {
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
-                    Text(text = "Kryptography")
+                    Text(text = stringResource(Res.string.app_name))
                 }
             )
         }

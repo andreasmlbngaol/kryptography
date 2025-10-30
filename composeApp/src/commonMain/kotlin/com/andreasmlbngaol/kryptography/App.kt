@@ -2,6 +2,7 @@ package com.andreasmlbngaol.kryptography
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.darkColorScheme
@@ -16,7 +17,7 @@ import com.andreasmlbngaol.kryptography.core.data.theme.deliusTypography
 @Preview
 fun App() {
     MaterialTheme(
-        colorScheme = if(isSystemInDarkTheme()) darkColorScheme() else lightColorScheme(),
+        colorScheme = colorScheme,
         typography = deliusTypography()
     ) {
         Surface(
@@ -27,3 +28,8 @@ fun App() {
         }
     }
 }
+
+expect val colorScheme: ColorScheme
+val nonAndroidColorScheme
+    @Composable
+    get() = if(isSystemInDarkTheme()) darkColorScheme() else lightColorScheme()

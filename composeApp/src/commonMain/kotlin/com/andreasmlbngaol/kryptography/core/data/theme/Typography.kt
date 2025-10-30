@@ -5,8 +5,8 @@ import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import kryptography.composeapp.generated.resources.Delius_Regular
-import kryptography.composeapp.generated.resources.Res
+import com.andreasmlbngaol.kryptography.resources.Delius_Regular
+import com.andreasmlbngaol.kryptography.resources.Res
 import org.jetbrains.compose.resources.Font
 
 @Composable
