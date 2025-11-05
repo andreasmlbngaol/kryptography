@@ -1,5 +1,6 @@
 package com.andreasmlbngaol.kryptography.features.affine.presentation.components.compact
 
+import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -59,15 +60,17 @@ fun AffineCompactScreen(
                 .padding(horizontal = 24.dp, vertical = 16.dp)
                 .fillMaxSize()
         ) {
-            when (state.selectedMenuIndex) {
-                0 -> {}
-                1 -> AffineCompactDecrypt(
-                    state = state,
-                    onChangeCipherText = viewModel::changeCipherText,
-                    onChangeCipherA = viewModel::changeCipherA,
-                    onChangeCipherB = viewModel::changeCipherB,
-                    onDecryptText = viewModel::decryptText,
-                )
+            AnimatedContent(state.selectedMenuIndex) { selectedMenuIndex ->
+                when (selectedMenuIndex) {
+                    0 -> {}
+                    1 -> AffineCompactDecrypt(
+                        state = state,
+                        onChangeCipherText = viewModel::changeCipherText,
+                        onChangeCipherA = viewModel::changeCipherA,
+                        onChangeCipherB = viewModel::changeCipherB,
+                        onDecryptText = viewModel::decryptText,
+                    )
+                }
             }
         }
     }
