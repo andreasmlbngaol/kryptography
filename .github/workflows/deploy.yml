@@ -42,3 +42,4 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           source: "composeApp/build/dist/wasmJs/productionExecutable/*"
           target: "/var/www/kryptography" # <-- GANTI DENGAN PATH DI VPS ANDA
+          strip_components: 5
